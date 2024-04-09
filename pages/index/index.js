@@ -101,7 +101,7 @@ Page({
     })
   },
 
-  // 获取用户当前头像
+  // 获取用户当前头像（废弃）
   getAvatar: function () {
     this.startLoading();
 
@@ -128,6 +128,7 @@ Page({
             that.endLoading()
             that.setData({
               backgroundImgSrc: [res.path]
+              // 此为背景图
             })
             wx.pageScrollTo({
               selector: "#avatarPreview",
@@ -146,6 +147,17 @@ Page({
         console.log(res)
       }
     })
+  },
+
+  onChooseAvatar(e) {
+    const { avatarUrl } = e.detail 
+    this.setData({
+      avatarUrl,
+    })
+    this.setData({
+      backgroundImgSrc: [avatarUrl]
+    })
+    console.log(avatarUrl)
   },
 
   //点击相框，将其设置为当前相框

@@ -33,9 +33,10 @@
 
     <!-- 按钮 -->
     <view class='buttons'>
-      <button id='getAvatar' size='mini' type='default' bindtap='getAvatar'>
-        使用当前头像</button>
-      <button id='selectImg' size='mini' type='default' bindtap='getLocalImg'> 选择图片</button>
+      <button size="mini" class="avatar" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      使用当前头像
+    </button> 
+      <button id='selectImg' size='mini' type='default' bindtap='getLocalImg'> 选择图片(推荐)</button>
       <button id='getHeadImg' class="highlightButton" size='mini' type='' bindtap='saveImg' data-save='{{tplImgSrc}}'
         disabled='{{backgroundImgSrc == "" || tplImgSrc == ""}}'>保存头像 </button>
     </view>
