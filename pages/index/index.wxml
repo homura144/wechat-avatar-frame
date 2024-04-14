@@ -62,7 +62,7 @@
   </view>
 
   <!-- 底图 -->
-  <image class="headImage" src="https://cloud.tsinghua.edu.cn/f/b2840b44765041309653/?dl=1" mode="widthFix" />
+  <image class="headImage" id='bottomImg' src="https://cloud.tsinghua.edu.cn/f/b2840b44765041309653/?dl=1" mode="widthFix" />
 
   <!-- 底部文字 -->
   <rich-text id="footerText">
