@@ -2,10 +2,10 @@
 
 <!-- 设置背景图，需要用在线图片 -->
 <view class="container"
-  style="background-image: url('https://cloud.tsinghua.edu.cn/f/fa43e4940f894bd9942d/?dl=1')!important;">
+  style="background-image: url('https://cloud.tsinghua.edu.cn/f/1a22debe344f497ba041/?dl=1')!important;">
 
   <!-- 头图 -->
-  <image class="headImage" id="topImg" src="https://cloud.tsinghua.edu.cn/f/e4093730ab72461786cb/?dl=1"
+  <image class="headImage" id="topImg" src="https://cloud.tsinghua.edu.cn/f/73a32e596e894a019818/?dl=1"
     mode="widthFix" />
 
   <!-- 相框 flex container -->
@@ -65,7 +65,7 @@
   </view>
 
   <!-- 底部图片 -->
-  <image class="headImage" src=https://cloud.tsinghua.edu.cn/f/276ea4e30d3e41ea9450/?dl=1" mode="widthFix"
+  <image class="headImage" src=https://cloud.tsinghua.edu.cn/f/9b5ec02b1cd940a0941f/?dl=1" mode="widthFix"
     style="margin-top: 0px; margin-bottom: 100px" />
 
   <rich-text id="footerText">
