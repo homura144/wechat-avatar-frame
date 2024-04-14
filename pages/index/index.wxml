@@ -1,16 +1,14 @@
 <!--index.wxml-->
 
-<!-- 设置背景图，需要用在线图片 -->
-<view class="container"
-  style="background-image: url('https://cloud.tsinghua.edu.cn/f/1a22debe344f497ba041/?dl=1')!important;">
+<!-- 可设置背景图或背景色，需要用在线图片 -->
+<view class="container">
 
   <!-- 头图 -->
-  <image class="headImage" id="topImg" src="https://cloud.tsinghua.edu.cn/f/73a32e596e894a019818/?dl=1"
-    mode="widthFix" />
+  <image class="headImage" id="topImg" src="https://cloud.tsinghua.edu.cn/f/0625910579ef47bab992/?dl=1" mode="widthFix" />
 
   <!-- 相框 flex container -->
   <view class='imgContainer'>
-    <view wx:for="{{imgUrl}}">
+    <view wx:for="{{imgUrl}}" wx:key="*this">
       <image src='{{item}}' data-img='{{item}}' class='frameImgThumb' bindtap="showChooseImg" mode="aspectFit"></image>
     </view>
   </view>
@@ -23,8 +21,7 @@
     <view class='avatarContainer'>
       <!-- 这里的 300 与其他文件需要保持一致 -->
       <view class='imgOverlay'>
-        <image src='{{backgroundImgSrc}}' mode='aspectFill'
-          style="left:{{(-imgOffsetX * imgScale) + 'px'}};top:{{(-imgOffsetY * imgScale) + 'px'}};width:{{(300 * imgScale) + 'rpx'}};height:{{(300 * imgScale * imgAspectRatio) + 'rpx'}}" />
+        <image src='{{backgroundImgSrc}}' mode='aspectFill' style="left:{{(-imgOffsetX * imgScale) + 'px'}};top:{{(-imgOffsetY * imgScale) + 'px'}};width:{{(300 * imgScale) + 'rpx'}};height:{{(300 * imgScale * imgAspectRatio) + 'rpx'}}" />
       </view>
 
       <image src='{{tplImgSrc}}' mode='aspectFit' class="frameImg"></image>
@@ -33,12 +30,11 @@
 
     <!-- 按钮 -->
     <view class='buttons'>
-      <button size="mini" class="avatar" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-      使用当前头像
-    </button> 
+      <button size="mini" class="avatar" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" style="position: relative; left: 0rpx; top: -19rpx">
+        使用当前头像
+      </button>
       <button id='selectImg' size='mini' type='default' bindtap='getLocalImg'> 选择图片(推荐)</button>
-      <button id='getHeadImg' class="highlightButton" size='mini' type='' bindtap='saveImg' data-save='{{tplImgSrc}}'
-        disabled='{{backgroundImgSrc == "" || tplImgSrc == ""}}'>保存头像 </button>
+      <button id='getHeadImg' class="highlightButton" size='mini' type='' bindtap='saveImg' data-save='{{tplImgSrc}}' disabled='{{backgroundImgSrc == "" || tplImgSrc == ""}}'>保存头像 </button>
     </view>
 
   </view>
@@ -52,32 +48,31 @@
 
       <!-- 这里的 400, 200, 200, 675 需要和其他文件保持一致 -->
       <movable-area>
-        <movable-view x="{{movableViewX}}" y="{{movableViewY}}" direction="all" scale="true" scale-max="1.5"
-          scale-min="0.4" bindchange="didMove" bindscale="didScale" bindtouchend="touchDidEnd" style="width: 675rpx ">
+        <movable-view x="{{movableViewX}}" y="{{movableViewY}}" direction="all" scale="true" scale-max="1.5" scale-min="0.4" bindchange="didMove" bindscale="didScale" bindtouchend="touchDidEnd" style="width: 675rpx ">
+          <!-- 裁剪框 -->
           <image id="grid" src="../img/grid.png" style="width: 675rpx; height: 675rpx;opacity: 0.8"></image>
         </movable-view>
       </movable-area>
     </view>
 
+    <!-- 重置按钮-->
     <button bindtap="resetOffset" type="default">
       重置裁剪框
     </button>
   </view>
 
-  <!-- 底部图片 -->
-  <image class="headImage" src=https://cloud.tsinghua.edu.cn/f/9b5ec02b1cd940a0941f/?dl=1" mode="widthFix"
-    style="margin-top: 0px; margin-bottom: 100px" />
+  <!-- 底图 -->
+  <image class="headImage" src="https://cloud.tsinghua.edu.cn/f/b2840b44765041309653/?dl=1" mode="widthFix" />
 
+  <!-- 底部文字 -->
   <rich-text id="footerText">
     机械系学生会文化策划部 出品
   </rich-text>
-
 
 </view>
 
 
 <!-- 将canvas放置在画面外 -->
-<view class='canvasContainer' wx:if='{{isShowCanvas}}'
-  style="position:fixed;top:-640;width:640; height: 640;opacity:0;">
+<view class='canvasContainer' wx:if='{{isShowCanvas}}' style="position:fixed;top:-640;width:640; height: 640;opacity:0;">
   <canvas width="640" height="640" style='width:640px; height: 640px;' canvas-id="myCanvas"></canvas>
 </view>

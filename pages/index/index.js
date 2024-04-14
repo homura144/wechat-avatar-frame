@@ -17,12 +17,12 @@ const previewWidth = 300.0;
 
 // 头像框资源网址
 const urls = [
-  'https://cloud.tsinghua.edu.cn/f/5ac8c194172c48f7b626/?dl=1',
-  'https://cloud.tsinghua.edu.cn/f/6d395a0f10704044a45e/?dl=1',
-  'https://cloud.tsinghua.edu.cn/f/cc90e4c1efdb47a88eea/?dl=1',
-  'https://cloud.tsinghua.edu.cn/f/129e75dea13c41858963/?dl=1',
-  'https://cloud.tsinghua.edu.cn/f/de8f331a8644479da51a/?dl=1',
-  'https://cloud.tsinghua.edu.cn/f/c656e47adc7e41d184f3/?dl=1',
+  'https://cloud.tsinghua.edu.cn/f/640bbaa9ccc844f48555/?dl=1',
+  'https://cloud.tsinghua.edu.cn/f/e86eb47268ed420ab9b7/?dl=1',
+  'https://cloud.tsinghua.edu.cn/f/e3bcdd2ab52349e2ba6c/?dl=1',
+  'https://cloud.tsinghua.edu.cn/f/0b863cbfe94a4c538b2a/?dl=1',
+  'https://cloud.tsinghua.edu.cn/f/75a12270914442d1be82/?dl=1',
+  'https://cloud.tsinghua.edu.cn/f/df07c1ad8db84c4daf41/?dl=1',
 ];
 
 Page({
