@@ -2,18 +2,20 @@
   width: 100%;
   padding: 0;
   padding-bottom: 40px;
-  background-color: #1d2b3d!important;
+  background-color: #1d2b3d !important;
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
 .headImage {
   width: 100%;
+  /*  mode=“widthFix” 时，设置height来避免加载时竖向拉伸变形 */
+  height: auto;
 }
 
 #topImg {
   width: 100%;
-  background-color: #1d2b3d!important;
+  background-color: #1d2b3d !important;
 }
 
 .imgContainer {
